@@ -1,0 +1,25 @@
+
+[{
+  "name": "ÄlgBurgare",
+  "kCal":550,
+  "url": "Algburgare-MH.jpg",
+  "lactose": true,
+  "gluten": false
+},
+
+{
+  "name": "BäverBurgare",
+  "kCal":900,
+  "url": "large-burger-with-two-fried-1782885.jpg",
+  "lactose": false,
+  "gluten": true
+},
+  {
+    "name": "RenBurgare",
+    "kCal":800,
+    "url": "burgare2.jpg.webp",
+    "lactose": false,
+    "gluten": true
+  }
+
+  ]

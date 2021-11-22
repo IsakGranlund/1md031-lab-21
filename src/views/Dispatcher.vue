@@ -2,21 +2,28 @@
   <div id="orders">
     <div id="orderList">
       <div v-for="(order, key) in orders" v-bind:key="'order'+key">
-        #{{ key }}: {{ order.orderItems.join(", ") }}
+        <br>
+        #{{ key }}: {{(JSON.stringify(order.orderItems))}}
+        <p>
+          {{order.details.fn}} ,{{order.details.em}},{{order.details.rcp}},{{order.details.gender}}
+        </p>
+
+
+
+
       </div>
       <button v-on:click="clearQueue">Clear Queue</button>
     </div>
     <div id="dots">
-        <div v-for="(order, key) in orders" v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}" v-bind:key="'dots' + key">
-          {{ key }}
-        </div>
+      <div v-for="(order, key) in orders" v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}" v-bind:key="'dots' + key">
+        {{ key }}
+      </div>
     </div>
   </div>
 </template>
 <script>
 import io from 'socket.io-client'
 const socket = io();
-
 export default {
   name: 'Dispatcher',
   data: function () {
@@ -26,7 +33,7 @@ export default {
   },
   created: function () {
     socket.on('currentQueue', data =>
-      this.orders = data.orders);
+        this.orders = data.orders);
   },
   methods: {
     clearQueue: function () {
@@ -55,7 +62,6 @@ export default {
   height: 1078px;
   cursor: crosshair;
 }
-
 #dots div {
   position: absolute;
   background: black;
